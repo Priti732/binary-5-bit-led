@@ -17,9 +17,11 @@ Serial.print("Enter the number to be converted:");
 }
 int binary(int number) {
   int r=0;
+  int k=0;
   while(number!=0) {
-    r = (number % 2 == 0 ? 0 : 1)+(r*10); 
+    r = ((number % 2 == 0 ? 0 : 1)*pow(10,k))+r; 
     number /= 2;
+    k++;
   }
   return r;
 }
